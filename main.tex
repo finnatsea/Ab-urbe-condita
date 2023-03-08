@@ -2,15 +2,26 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{caption}
+\usepackage{tabularx} % for centering table
+\usepackage{graphicx} % for adjusting table size
 
 \captionsetup[table]{labelformat=empty}
 
+\usepackage[margin=1in]{geometry} % adjust margins
+% \usepackage{newtxtext,newtxmath} % use Times New Roman font
+% \setlength{\parskip}{1ex} % add vertical space between paragraphs
 
 \begin{document}
+\pagestyle{empty} % Removes page number
+
 \begin{table}[htbp]
 \centering
-\caption{\large \textbf{AB URBE CONDITA}}
-\begin{tabular}{rrl}
+\vspace{9ex} % add vertical space before table
+
+\caption{\textbf{\Large AB URBE CONDITA}}
+\vspace{1ex} % add vertical space before table
+
+\begin{tabularx}{\textwidth}{@{}>{\centering\arraybackslash}p{0.2\textwidth} >{\centering\arraybackslash}p{0.15\textwidth} X@{}}
 \toprule
 AUC & Year & Event \\
 \midrule
@@ -20,9 +31,9 @@ AUC & Year & Event \\
 490   & 264 BC & Punic Wars \\
 709   & 45 BC & First year of the Julian calendar \\
 710   & 44 BC & The assassination of Julius Caesar \\
-727   & 27 BC & Augustus became the first Roman emperor, starting the Principate \\
+727   & 27 BC & Augustus became the first Roman emperor, Principate starts \\
 753   & 1 BC  & Astronomical Year 0 \\
-754   & AD 1 & Approximate birth date of Jesus (by Dionysius Exiguus, AD 525) \\
+754   & AD 1 & Birth of Jesus (approximate by Dionysius Exiguus AD 525) \\
 1000  & AD 247 & 1,000th Anniversary of the City of Rome \\
 1037  & AD 284 & Diocletian became Roman emperor, starting the Dominate \\
 1229  & AD 476 & Fall of the Western Roman Empire to the armies of Odoacer \\
@@ -30,7 +41,7 @@ AUC & Year & Event \\
 1306  & AD 553 & Italy under Eastern Roman control \\
 1507  & AD 754 & Foundation of the Papal States \\
 1553  & AD 800 & Creation of the Holy Roman Empire \\
-1930  & AD 1177 & Papal States became independent from the Holy Roman Empire \\
+1930  & AD 1177 & Papal States became independent from Holy Roman Empire \\
 2000  & AD 1247 & 2,000th Anniversary of the City of Rome \\
 2247  & AD 1494 & Italian Wars \\
 2545  & AD 1792 & Italian campaigns of the French Revolutionary Wars \\
@@ -47,8 +58,11 @@ AUC & Year & Event \\
 2776  & AD 2023 & Current year \\
 2777  & AD 2024 & Next year \\
 \bottomrule
-\end{tabular}%
+\end{tabularx}
+
+\vspace{.5 ex} % add vertical space after table
 \caption*{\footnotesize AUC (\emph{Ab urbe condita} or ``from the founding of the City") expresses a date in years since 753 BC, the year of the traditional founding of Rome by Romulus.}
 \label{tab:addlabel}%
 \end{table}%
+
 \end{document}
